@@ -26,7 +26,7 @@ function Header() {
                     <Link>Exclusive</Link>
                     <ul>
                         <li>
-                            <Link>Home</Link>
+                            <Link to="/">Home</Link>
                         </li>
                         <li>
                             <Link>Contact</Link>
@@ -35,7 +35,7 @@ function Header() {
                             <Link>About</Link>
                         </li>
                         <li>
-                            <Link>Sign Up</Link>
+                            <Link to="/register">Sign Up</Link>
                         </li>
                     </ul>
                 </div>
