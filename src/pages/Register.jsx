@@ -5,6 +5,7 @@ import google from "../assets/svg/google.svg"
 import { Link } from 'react-router-dom';
 import { auth } from '../firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import {  toast } from 'react-toastify';
 
 function SignUp() {
     const [email, setEmail] = useState("")
@@ -15,9 +16,13 @@ function SignUp() {
             const res = await createUserWithEmailAndPassword(auth, email, password)
 
             console.log(res);
+            if(res) {
+                toast.success("user seuccess created")
+            }
             
         } catch (error) {
-            console.log(error);            
+            console.log(error);         
+            toast.error(error.message)   
         }
     }
 
@@ -28,7 +33,7 @@ function SignUp() {
         <div className='form-container'>
           <h3>Create an account</h3>
           <p>Enter your details to get started.</p>
-          <form>
+          <div>
             <div className='form-group'>
               <label htmlFor="name">Name</label>
               <input type="text" id="name" name="name" placeholder="Enter your name"  />
@@ -53,13 +58,13 @@ function SignUp() {
                 name="password" 
                 placeholder="Enter your password" required />
             </div>
-            <button type="submit" className='signup-button'>Create Account</button>
+            <button onClick={createUser} type="submit" className='signup-button'>Create Account</button>
             <div className='btn'>
             <button>
               <img src={google} alt="" />
               Sign up with Google</button>
             </div>
-          </form>
+          </div>
           <p className='login-link'>
             Already have an account? 
             <Link to="/login">Log in</Link>

@@ -2,6 +2,8 @@ import React from 'react';
 import "./LogIn.scss";
 import kortel from "../assets/image/kortel.png";
 import { Link } from 'react-router-dom';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+
 function LogIn() {
   return (
     <div className='LogIn'>
