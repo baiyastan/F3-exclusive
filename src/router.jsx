@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import SignUp from "./pages/Register";
 import LogIn from "./pages/Login";
 import Menu from "./pages/Menu";
+import WishList from "./pages/WishList";
 
 export const myRouter = createBrowserRouter([
     {
@@ -25,7 +26,11 @@ export const myRouter = createBrowserRouter([
             {
                 path: "menu",
                 element: <Menu/>
-            }
+            },
+            {
+                path: "wishlist",
+                element: <WishList/>
+            },
         ]
     }
 ])

@@ -1,9 +1,10 @@
 import React from 'react'
+import WishCard from '../components/wishCard/WishCard'
 
 function WishList() {
   return (
-    <div>
-      
+    <div className='container'>
+      <WishCard/>
     </div>
   )
 }

@@ -45,7 +45,9 @@ function Header() {
                         <img src={search} alt="" />
                     </div>
                     <div className='icons'>
-                        <img src={wishlist} alt="" />
+                        <Link to="/wishlist">
+                            <img src={wishlist} alt="" />
+                        </Link>
                         <img src={cart} alt="" />
                     </div>
                 </div>
